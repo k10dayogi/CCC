@@ -35,7 +35,7 @@ for(i in 1:length(x)){
   u[i]<-mean(ls[[i]]$EstimateLow,na.rm = T)/pop[i,3]
 }
 #First Plot
-plot(u);text(u,labels=x,cex=0.7,pos=1)
+plot(u,main='Mean crowd size relative to population');text(u,labels=x,cex=0.7,pos=1)
 #Set up subsets by date.
 y<-unique(count$Date);lt<-list();v<-vector('numeric',length(y))
 for(i in 1:length(y)){
@@ -45,6 +45,6 @@ for(i in 1:length(y)){
 
 #Second Plot
 which(v>2000)->z;y0<-y[-z];v0<-v[-z]
-plot(y0,v0,type='h')
+plot(y0,v0,type='h',main='Daily mean crowd size')
 
 
